@@ -1,0 +1,275 @@
+\documentclass{article}
+
+% ------------------------------------------------------------------
+% Pacotes essenciais
+% ------------------------------------------------------------------
+\usepackage[utf8]{inputenc}   % Permite escrever diretamente com acentos
+\usepackage[T1]{fontenc}      % Usa fontes codificadas em T1 (acentos corretos)
+\usepackage[brazil]{babel}    % Hifenização e termos em português
+\usepackage{amsmath, amssymb} % Matemática avançada
+\usepackage{graphicx}         % Inclusão de figuras
+\usepackage{hyperref}         % Links clicáveis
+\usepackage{enumitem}         % Controle fino de listas
+
+% ------------------------------------------------------------------
+% Informações do documento
+% ------------------------------------------------------------------
+\title{Aplica\c{c}\~oes de \'Algebra Linear}
+\author{Roberto}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% ------------------------------------------------------------------
+% Exercício 1
+% ------------------------------------------------------------------
+\section*{Exerc\'icios}
+
+\subsection*{Exerc\'icio 1}
+\textbf{Enunciado 1: Use Gaussian Elimination and three-digit chopping arithmetic to solve the following linear systems, and compare the approximations to the actual solution.}
+
+\begin{enumerate}
+  \item
+    \[
+      \begin{aligned}
+        0.03x_{1} + 58.9x_{2} &= 59.2 \\
+        5.31x_{1} -  6.10x_{2} &= 47.0
+      \end{aligned}
+    \]
+    \textit{Solu\c{c}\~ao exata:} $\bigl(10,\,1\bigr)$
+
+  \item
+    \[
+      \begin{aligned}
+        3.03x_{1} - 12.1x_{2} + 14x_{3} &= -119 \\
+       -3.03x_{1} + 12.1x_{2} -  7x_{3} &=  120 \\
+        6.11x_{1} - 14.2x_{2} + 21x_{3} &= -139
+      \end{aligned}
+    \]
+    \textit{Solu\c{c}\~ao exata:} $\bigl(0,\,10,\,\tfrac17\bigr)$
+
+  \item
+    \[
+      \begin{aligned}
+        1.19x_{1} +   2.11x_{2} - 100x_{3} +  x_{4} &= 1.12 \\
+       14.2x_{1}  -  0.122x_{2} + 12.2x_{3} - x_{4} &= 3.44 \\
+       0x_{1} + 100x_{2}  - 99.9x_{3}  +  x_{4}             &= 2.15 \\
+       15.3x_{1}  + 0.110x_{2} - 13.1x_{3} - x_{4}  &= 4.16
+      \end{aligned}
+    \]
+    \textit{Solu\c{c}\~ao exata:} $\bigl(0.176,\;0.0126,\;-0.0206,\;-1.18\bigr)$
+\end{enumerate}
+
+% ------------------------------------------------------------------
+% Exercício 2
+% ------------------------------------------------------------------
+\subsection*{Exerc\'icio 2}
+\textbf{Enunciado 2: Determine which of the following matrices are nonsingular, and compute the inverse of these matrices:}
+
+\begin{enumerate}
+    \item
+    \[
+    \begin{bmatrix}
+        4 &  2 &  6 \\
+        3 &  0 &  7 \\
+        -2 & -1 & -3
+    \end{bmatrix}
+    \]
+    \item
+    \[
+    \begin{bmatrix}
+        1 &  2 &  0 \\
+        2 &  1 & -1 \\
+        3 &  1 &  1
+    \end{bmatrix}
+    \]
+    \item
+    \[
+    \begin{bmatrix}
+        1 &  1 & -1 &  1 \\
+        1 &  2 & -4 & -2 \\
+        2 &  1 &  1 &  5 \\
+        -1 &  0 & -2 & -4
+    \end{bmatrix}
+    \]
+    \item
+    \[
+    \begin{bmatrix}
+        4 & 0 & 0 & 0 \\
+        6 & 7 & 0 & 0 \\
+        9 & 11 & 1 & 0 \\
+        5 & 4 & 1 & 1
+    \end{bmatrix}
+    \]
+\end{enumerate}
+
+% ------------------------------------------------------------------
+% Exercício 3
+% ------------------------------------------------------------------
+\subsection*{Exerc\'icio 3}
+\textbf{Enunciado 3: Calcule o determinante usando a triangulariza\c{c}\~ao (aten\c{c}\~ao para as regras de mudan\c{c}a de sinal).}
+\begin{enumerate}
+    \item 
+    \[
+    \begin{bmatrix}
+        4 & 2  & 6 \\
+        -1 & 0 & 4 \\
+        2 & 1 & 7
+    \end{bmatrix}
+    \]
+    \item
+    \[
+    \begin{bmatrix}
+        2 & 2 & 1 \\
+        3 & 4 & -1 \\
+        3 & 0 & 5
+    \end{bmatrix}
+    \]
+    \item 
+    \[
+    \begin{bmatrix}
+        1 & 1 & 2 & 1 \\
+        2 & -1 & 2 & 0 \\
+        3 & 4 & 1 & 1 \\
+        -1 & 5 & 2 & 3
+    \end{bmatrix}
+    \]
+    \item 
+    \[
+    \begin{bmatrix}
+        1 & 2 & 3 & 4 \\
+        2 & 1 & -1 & 1 \\
+        -3 & 2 & 0 & 1 \\
+        0 & 5 & 2 & 6
+    \end{bmatrix}
+    \]
+\end{enumerate}
+
+% ------------------------------------------------------------------
+% Exercício 4
+% ------------------------------------------------------------------
+\subsection*{Exerc\'icio 4}
+\textbf{Enunciado 4: Resolver os sistemas usando a decomposi\c{c}\~ao LU e posteriormente as substitui\c{c}\~oes diretas e reversas.}
+\begin{enumerate}
+    \item 
+    \[
+        \begin{aligned}
+            x_1 - x_2 + 0x_3 &= 2 \\
+            2x_1 + 2x_2 + 3x_3 &= -1 \\
+            -x_1 + 3x_2 + 2x_3 &= 4
+        \end{aligned}
+    \]
+    \item 
+    \[
+        \begin{aligned}
+            \frac13x_1 + \frac12x_2 - \frac14x_3 &= 1 \\
+            \frac15x_1 + \frac23x_2 + \frac38x_3 &= 2 \\
+            \frac25x_1 - \frac23x_2 + \frac58x_3 &= -3
+        \end{aligned}
+    \]
+    \item 
+    \[
+        \begin{aligned}
+            2x_1 + x_2 + 0x_3 + 0x_4 &= 0 \\
+            -x_1 + 3x_2 + 3x_3 + 0x_4 &= 5 \\
+            2x_1 - 2x_2 + x_3 + 4x_4 &= -2 \\
+            -2x_1 + 2x_2 + 2x_3 + 5x_4 &= 6
+        \end{aligned}
+    \]
+    \item 
+    \[
+        \begin{aligned}
+            2.121x_1 - 3.460x_2 + 0x_3 + 5.217x_4 &= 1.909 \\
+            0x_1 + 5.193x_2 - 2.197x_3 + 4.206x_4 &= 0 \\
+            5.132x_1 + 1.414x_2 + 3.141x_3 + 0x_4 &= -2.101 \\
+            -3.111x_1 - 1.732x_2 + 2.718x_3 + 5.212x_4 &= 6.824
+        \end{aligned}
+    \]
+\end{enumerate}
+
+% ------------------------------------------------------------------
+% Exercício 5
+% ------------------------------------------------------------------
+\subsection*{Exerc\'icio 5}
+\textbf{Enunciado 5: Encontrar a fatoriza\c{c}\~ao $A=P^TLU$.}
+\begin{enumerate}
+    \item 
+    \[
+        A=\begin{bmatrix}
+            0 & 2 & 3 \\
+            1 & 1 & -1 \\
+            0 & -1 & 1
+        \end{bmatrix}
+    \]
+    \item 
+    \[
+        A=\begin{bmatrix}
+            1 & 2 & -1 \\
+            1 & 2 & 3 \\
+            2 & -1 & 4
+        \end{bmatrix}
+    \]
+    \item 
+    \[
+        A=\begin{bmatrix}
+            1 & -2 & 3 & 0 \\
+            3 & -6 & 9 & 3 \\
+            2 & 1 & 4 & 1 \\
+            1 & -2 & 2 & -2
+        \end{bmatrix}
+    \]
+    \item 
+    \[
+        A=\begin{bmatrix}
+            1 & -2 & 3 & 0 \\
+            1 & -2 & 3 & 1 \\
+            1 & -2 & 2 & -2 \\
+            2 & 1 & 3 & -1
+        \end{bmatrix}
+    \]
+\end{enumerate}
+
+% ------------------------------------------------------------------
+% Exercício 6
+% ------------------------------------------------------------------
+\subsection*{Exerc\'icio 6}
+\textbf{Enunciado 6: Resolver os sistemas usando as fatoriza\c{c}\~oes $LDL^T$ e $LL^T$ (Cholesky) e posteriormente as substitui\c{c}\~oes necess\'arias.}
+\begin{enumerate}
+    \item 
+    \[
+        \begin{aligned}
+            4x_1 - x_2 + x_3 &= -1 \\
+            -x_1 + 3x_2 + 0x_3 &= 4 \\
+            x_1 + 0x_2 + 2x_3 &= 5
+        \end{aligned}
+    \]
+    \item 
+    \[
+        \begin{aligned}
+            4x_1 + 2x_2 + 2x_3 &= 0 \\
+            2x_1 + 6x_2 + 2x_3 &= 1 \\
+            2x_1 + 2x_2 + 5x_3 &= 0
+        \end{aligned}
+    \]
+    \item 
+    \[
+        \begin{aligned}
+            4x_1 + 0x_2 + 2x_3 + x_4 &= -2 \\
+            0x_1 + 3x_2 - x_3 + x_4 &= 0 \\
+            2x_1 - x_2 + 6x_3 + 3x_4 &= 7 \\
+            x_1 + x_2 + 3x_3 + 8x_4 &= -2
+        \end{aligned}
+    \]
+    \item 
+    \[
+        \begin{aligned}
+            4x_1 + x_2 + x_3 + x_4 &= 2 \\
+            x_1 + 3x_2 + 0x_3 - x_4 &= 2 \\
+            x_1 + 0x_2 + 2x_3 + x_4 &= 1 \\
+            x_1 - x_2 + x_3 + 4x_4 &= 1
+        \end{aligned}
+    \]
+\end{enumerate}
+
+\end{document}
